@@ -1,0 +1,24 @@
+doctype html 
+html  
+    head    
+        title= title    
+        link(rel='stylesheet', href='/stylesheets/style.css')  
+    body    
+        h1= title    
+        hr    
+        form(method='post', action='/order')      
+            label Item Name:      
+            br      
+            input(type='text', name='itemname')      
+            br      
+            label Quantity:      
+            br      
+            input(type='text', name='quantity')      
+            br      
+            input(type='submit')
+        br
+        a(href='/') Home Page
+        br
+        a(href='/cart') Cart Page
+        hr
+        p= message

@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        header
+            h1= title
+            hr
+        section
+           table
+                thead
+                    tr
+                        th Item Name
+                        th Quantity
+                tbody
+                    each item,index in cart
+                        tr
+                            form(method='post', action='/cart')      
+                                td 
+                                    input(type='hidden' name='itemId' value='#{index}')
+                                    input(type='text' name='itemname' value='#{item.itemname}')
+                                td 
+                                    input(type='text' name='itemQty' value='#{item.quantity}')
+                                td
+                                   input(type='submit'  name='btn' value='Remove') 
+                                td
+                                   input(type='submit'  name='btn' value='Update') 
